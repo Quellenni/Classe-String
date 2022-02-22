@@ -102,7 +102,7 @@ posso usar o método split, basta aplicar o método Split da seguinte forma: cpf
 
 
 
-## StringJoiner
+## java.util.StringJoiner
 StringJoiner é usado para construir uma sequência de caracteres separados por um _delimitador_ e, opcionalmente, começando com um _prefixo_ fornecido e terminando com um _sufixo_ fornecido.
 
 _Delimitador_ a sequência de caracteres a ser usada entre
