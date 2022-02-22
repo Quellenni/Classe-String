@@ -1,3 +1,107 @@
+## java.lang.String 
+É utilizada para representar textos através de uma cadeia de caracteres,
+todos literais em string são implementados com essa classe no Java, após atribuídos não
+podem ser alterados.
+
+**Alternativas de instanciação de objetos com construtor ou métodos singleton:**
+
+Utilizando construtor para instanciar um Objeto String: String texto = **new**
+
+String("Instanciando um novo objeto tipo String");
+
+Utilizando método Singleton para Instanciar :
+
+A implementação consiste em um construtor privado e um campo para armazenar seu
+resultado, além de um método de acesso estático com o nome **getInstance()**.
+
+O campo privado pode ser atribuído de dentro de um bloco inicializador estático ou usando
+um inicializador. O método **getInstance()**, que deve ser público, retorna a esta instância.
+
+public class Singleton {
+
+private static Singleton singleton = new Singleton();
+
+//Um construtor privado impede que a classe seja instanciada
+
+private Singleton() {}
+
+public static Singleton getInstance() {
+
+return singleton;
+
+}
+
+// Método protegido pela instância da classe
+
+protected static void imprimeMensagem() {
+
+String mensagem = "Hello Word";
+
+System.out.println (mensagem);
+
+}
+
+}
+
+Para executar o método **imprimeMensagem()**, que está protegido na classe Singleton,
+devemos pegar uma instância da classe para poder ter acesso:
+
+
+public class ExemploSingleton {
+
+public static void main (String [] args) {
+
+Singleton singleton = Singleton.getInstance ();
+
+singleton.imprimeMensagem();
+
+}
+
+}
+
+
+O resultado da execução acima será: “Hello, Singleton” e toda vez que o método for
+executado, a JVM utilizará a mesma instância da classe para responder e nenhum novo
+objeto do tipo será instanciado.
+
+
+**Métodos:**
+
+a) compareToIgnoreCase(String exemplo) - Método compara duas strings ignorando
+se é maiuscula ou minuscula. Retorna um int sendo 0 verdadeiro -1 falso;
+
+b) format(String exemplo, “argumento”) - Método formata a string a partir de
+argumentos, retorna o valor do argumento a string
+
+c) concat(String exemplo) - Método concatena a string especificada ao final da string
+onde método foi chamado.
+
+d) split(String exemplo ) - Método Divide esta string em várias substrings a partir de
+um delimitador indicado pelo usuário;
+
+**Método sobrecarregado:**
+
+@Override
+public String toString(){
+
+return "Esse é meu objeto Random";
+
+}
+
+**Demonstração adaptando o uso dos métodos:**
+
+- Verificação de Banco de dados : login.compareToIgnoreCase(String exemplo) -
+Método compararia se o login corresponde a string que usei no ao logar site.
+- Realizar cadastro no banco de dados: nome.format(String exemplo, “argumento”)
+para atribuir um dados para operação do crud.
+- Também no cadastro e banco de dados : nome.concat(sobrenome) para concatenar
+nomes, endereço ou qualquer outra informação de cadastro;
+- Caso eu tenha um cadastro e CPF e precise transformar as informações num array
+posso usar o método split, basta aplicar o método Split da seguinte forma: cpf.split("
+. ");
+
+
+
 ## StringJoiner
 StringJoiner é usado para construir uma sequência de caracteres separados por um _delimitador_ e, opcionalmente, começando com um _prefixo_ fornecido e terminando com um _sufixo_ fornecido.
 
